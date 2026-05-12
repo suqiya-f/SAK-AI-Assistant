@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+.font-heading { font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.02em; }
+
+/* Grain overlay */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(14,165,233,0.25); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(14,165,233,0.5); }
+
+/* Markdown prose tweaks */
+.markdown { line-height: 1.65; }
+.markdown h1, .markdown h2, .markdown h3 { font-family: 'Outfit', sans-serif; font-weight: 600; margin: 0.8em 0 0.4em; }
+.markdown h1 { font-size: 1.5rem; }
+.markdown h2 { font-size: 1.25rem; }
+.markdown h3 { font-size: 1.1rem; }
+.markdown p { margin: 0.5em 0; }
+.markdown ul, .markdown ol { padding-left: 1.4em; margin: 0.5em 0; }
+.markdown ul { list-style: disc; }
+.markdown ol { list-style: decimal; }
+.markdown li { margin: 0.2em 0; }
+.markdown code {
+  background: rgba(14,165,233,0.12);
+  padding: 0.12em 0.36em;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+}
+.markdown pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 0.7em 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+}
+.markdown pre code { background: transparent; padding: 0; color: inherit; }
+.markdown a { color: #0ea5e9; text-decoration: underline; }
+.markdown blockquote {
+  border-left: 3px solid #0ea5e9;
+  padding-left: 1rem;
+  color: #475569;
+  margin: 0.7em 0;
+}
+.dark .markdown blockquote { color: #94a3b8; }
+.markdown table { border-collapse: collapse; margin: 0.7em 0; }
+.markdown th, .markdown td { border: 1px solid #e2e8f0; padding: 0.4em 0.7em; }
+.dark .markdown th, .dark .markdown td { border-color: #1e293b; }

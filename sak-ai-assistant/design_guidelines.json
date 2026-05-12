@@ -1,0 +1,180 @@
+{
+  "brand": {
+    "name": "SAK AI Assistant",
+    "creator": "Suqiya",
+    "tagline": "Turning Ideas into Intelligent Experiences",
+    "theme": "Light & Dark Mode (Dark Mode Toggle Required)",
+    "archetype": "Archetype 4 (Swiss & High-Contrast) blended with Sky Blue (Archetype 3 Influence)",
+    "vibe": "Intelligent, fluid, accessible, trustworthy, premium SaaS"
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#0ea5e9",
+      "50": "#f0f9ff",
+      "100": "#e0f2fe",
+      "200": "#bae6fd",
+      "300": "#7dd3fc",
+      "400": "#38bdf8",
+      "500": "#0ea5e9",
+      "600": "#0284c7",
+      "700": "#0369a1",
+      "800": "#075985",
+      "900": "#0c4a6e",
+      "950": "#082f49"
+    },
+    "gradients": {
+      "brand": "bg-gradient-to-r from-sky-400 to-sky-600",
+      "brand_hover": "bg-gradient-to-r from-sky-500 to-sky-700",
+      "text_gradient": "bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-sky-600"
+    },
+    "light_mode": {
+      "background": "#f8fafc",
+      "surface": "#ffffff",
+      "text_primary": "#0f172a",
+      "text_secondary": "#475569",
+      "border": "#e2e8f0",
+      "muted": "#f1f5f9"
+    },
+    "dark_mode": {
+      "background": "#020617",
+      "surface": "#0f172a",
+      "text_primary": "#f8fafc",
+      "text_secondary": "#94a3b8",
+      "border": "#1e293b",
+      "muted": "#0f172a"
+    },
+    "rules": [
+      "No full-screen gradients. Use texture (noise, grain) or strategic blurs over gloss.",
+      "The 'Tinted Grey' Rule: Never use pure #000000. Tint greys with blue (slate/slate-950) to match the Sky theme.",
+      "Hover text color must always be explicitly defined (e.g., hover:text-white).",
+      "Do NOT use teal green or teal blue (#1B93A4) for dashboards. Stick to Sky Blue."
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "headings": "'Outfit', sans-serif",
+      "body": "'Manrope', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tighter",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight",
+      "h3": "text-xl sm:text-2xl font-medium",
+      "h4": "text-lg sm:text-xl font-medium",
+      "body": "text-base leading-relaxed",
+      "small": "text-sm leading-relaxed",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-sky-500"
+    },
+    "rules": [
+      "BANNED FONTS: Inter, Roboto, Open Sans, Lato, Syne for Headings. Space Grotesk is forbidden.",
+      "Tight letter spacing on headings (tracking-tight or tracking-tighter).",
+      "The jump between a heading and its subheading must not exceed 2 Tailwind steps."
+    ]
+  },
+  "spacing_and_layout": {
+    "generous_spacing": true,
+    "container_padding": "p-6 md:p-8 lg:p-12",
+    "grids": {
+      "bento_marketing": "grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8 lg:gap-12",
+      "dashboard": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+    },
+    "rules": [
+      "Containers with borders MUST have internal padding (p-6 or p-8) to prevent text collision.",
+      "Never fill 100% of the bento grid perfectly in marketing. Leave 'breathing room' or use empty cells for offset alignment.",
+      "Optical Alignment: If a button has an icon on the left, add extra padding to visually center the text block."
+    ]
+  },
+  "surfaces_and_shadows": {
+    "styles": {
+      "glassmorphism": "backdrop-blur-xl bg-white/70 dark:bg-slate-900/60 border border-white/20 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)]",
+      "dashboard_card": "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl",
+      "tracing_beam_card": "relative overflow-hidden rounded-xl border border-sky-500/30 bg-white dark:bg-slate-900 shadow-[0_0_15px_rgba(14,165,233,0.1)]"
+    },
+    "rules": [
+      "Glassmorphism must have a 1px delicate inner stroke to separate it from the background.",
+      "Headers over scrolling content MUST use Crystal Glass.",
+      "Dashboards should use subtle roundness, max 12px (rounded-xl)."
+    ]
+  },
+  "components": {
+    "navigation": {
+      "type": "Sticky Glassmorphism Header",
+      "elements": ["Logo: SAK AI Assistant", "Links: Chat, Studio, Translate, Notes", "Dark Mode Toggle", "CTA: Get Started / Avatar"]
+    },
+    "ai_chat_interface": {
+      "layout": "Sidebar history + Main chat area",
+      "message_bubbles": "User: bg-sky-50 dark:bg-sky-900/20. AI: Transparent with border or subtle slate bg.",
+      "features": ["Markdown rendering", "Token-by-token streaming UI", "Thumbs up/down feedback tiers", "Keyboard shortcuts (Cmd+K)"]
+    },
+    "image_generation_studio": {
+      "layout": "Left/Right split or Godly-style filtered grid",
+      "features": ["Prompt input with advanced settings (ratio, style)", "Real-time generation state", "Gallery of past generations"]
+    },
+    "translation_tool": {
+      "layout": "Side-by-side or stacked text areas",
+      "features": ["Language selectors (15+ languages)", "Swap languages button", "Copy to clipboard"]
+    },
+    "notes_bookmarks": {
+      "layout": "Masonry grid or clean list view",
+      "features": ["Tagging system", "Search bar", "Pin/Bookmark icons"]
+    },
+    "rules": [
+      "Use pure HTML + Tailwind for structural/marketing layouts. Use Shadcn components for interactive logic (Forms, Select, Dialog).",
+      "Always include `data-testid` attributes on interactive elements (e.g., `data-testid=\"chat-send-button\"`).",
+      "Customize Shadcn components to match the brand (Sky blue focus rings, adjusted radii)."
+    ]
+  },
+  "animations": {
+    "hover_states": "transition-all duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg",
+    "focus_states": "focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950",
+    "page_transitions": "framer-motion for smooth fade and slide-up (y: 20, opacity: 0 to y: 0, opacity: 1)"
+  },
+  "icons": {
+    "library": "lucide-react",
+    "instructions": "Use lucide-react (already installed). Use clear, consistent stroke widths (usually 2px)."
+  },
+  "assets": {
+    "images": [
+      {
+        "id": "hero_background",
+        "url": "https://images.unsplash.com/photo-1776875097847-49bd9bcf1eca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwyfHxhaSUyMHRlY2hub2xvZ3klMjBkYXNoYm9hcmQlMjBkYXJrJTIwYmx1ZXxlbnwwfHx8fDE3Nzg1ODAzMjN8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Dark blue abstract background with soft shapes. Use as the hero section background with a dark overlay (bg-slate-950/80) to ensure text readability.",
+        "category": "background"
+      },
+      {
+        "id": "user_avatar_1",
+        "url": "https://images.pexels.com/photos/35839966/pexels-photo-35839966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Professional user avatar portrait.",
+        "category": "avatar"
+      },
+      {
+        "id": "user_avatar_2",
+        "url": "https://images.pexels.com/photos/6146051/pexels-photo-6146051.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Professional user avatar portrait 2.",
+        "category": "avatar"
+      },
+      {
+        "id": "chat_interface_demo",
+        "url": "https://images.pexels.com/photos/16027823/pexels-photo-16027823.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "AI Interface showcase for the landing page feature section.",
+        "category": "feature_showcase"
+      }
+    ],
+    "rules": [
+      "NEVER use placeholder URLs (via.placeholder.com, etc.).",
+      "Images must be responsive and not exceed 80vh on mobile."
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. Start by setting up the Tailwind configuration with the custom colors (sky-50 to sky-950, and slate variables) and fonts (Outfit, Manrope).",
+    "2. Setup Dark Mode functionality using standard Tailwind `dark:` classes and a toggle context.",
+    "3. Build the Landing/Auth Page using the 'hero_background' image. Use glassmorphism for the header.",
+    "4. Implement the AI Chat Interface with a sidebar for history. Use proper markdown rendering libraries (e.g., react-markdown) and ensure the input area handles multi-line text gracefully.",
+    "5. Build the Image Generation Studio as a Godly-inspired grid or split-pane view with prompt inputs and parameter sliders.",
+    "6. Build the Translation Tool supporting 15+ languages using standard select dropdowns and side-by-side text areas.",
+    "7. Implement Notes & Bookmarks using a masonry or clean list layout.",
+    "8. Ensure every interactive element has a `data-testid` attribute (e.g., `data-testid=\"dark-mode-toggle\"`).",
+    "9. DO NOT ask the user for clarifications. Proceed with these creative decisions.",
+    "10. Use 'lucide-react' for all icons."
+  ]
+}
