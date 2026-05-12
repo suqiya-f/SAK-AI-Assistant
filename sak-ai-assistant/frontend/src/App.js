@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { AuthProvider, useAuth } from './lib/auth';
 import { ThemeProvider } from './lib/theme';
 import Splash from './components/Splash';
@@ -49,6 +50,7 @@ export default function App() {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
+      <SpeedInsights />
     </ThemeProvider>
   );
 }
